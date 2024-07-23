@@ -1,0 +1,154 @@
+/* .navbar {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  background-color: #48166C;
+  color: white;
+}
+
+.navbar img{
+  margin-left: 9px;
+}
+
+.navbar span{
+  flex-grow: 1;
+  text-align: center;
+  margin-left: -49px;
+  color: white;
+} */
+
+.container {
+  width: 403px;
+  height: 429px;
+  margin-top: 179px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #D8D6D6;
+  position: relative;
+}
+
+.container img {
+  position: absolute;
+  top: -100px; /* Ajustado para evitar overlap */
+  border-radius: 60px;
+  background-color: white;
+}
+
+/* Estilos del formulario */
+.container .form {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center;
+  margin: 0;
+}
+
+/* Estilos de los placeholders */
+input::placeholder {
+  color: #857D7D;
+  font-style: italic;
+}
+
+/* Estilos de los campos de entrada */
+.container .form .input-pass,
+.container .form .input-user {
+  width: 328px;
+  height: 34px;
+  border-radius: 40px;
+  border: none;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: black;
+}
+
+.container .form .input-user {
+  margin-top: 86px;
+}
+
+.container .form .input-pass {
+  margin-top: 21px;
+}
+
+/* Estilos de la etiqueta de la casilla de verificación */
+.container .form .montserrat-label {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300; 
+  font-style: normal;
+  color: #857D7D;
+}
+
+/* Estilos de la casilla de verificación */
+.container .form input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
+}
+
+/* Contenedor de la casilla de verificación */
+.checkbox-container {
+  width: 328px;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Estilos del botón de envío */
+.container .form button {
+  width: 224px;
+  height: 34px;
+  margin-top: 41px;
+  border-radius: 40px;
+  background-color: #290478;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+}
+
+.container .form button:hover {
+  background-color: white;
+  color: #290478;
+}
+
+/* Estilos del enlace de recuperación de contraseña */
+.container .form a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  margin-top: 16px;
+  color: #4F8EF5;
+}
+
+.container .form a:hover {
+  color: #9abaed;
+}
+
+/* Estilos adicionales */
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-left: 9px;
+}
+
+.g-recaptcha {
+  margin-top: 13px;
+}
+/* Estilo para el borde rojo en caso de error */
+.input-error {
+  border: 2px solid red;
+}
+
+/* Estilo para el mensaje de error */
+.error-message {
+  color: red;
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}

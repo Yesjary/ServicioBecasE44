@@ -1,0 +1,19 @@
+<nav class="navbar">
+  <img src="assets/logoUpp.png" class="logo">
+  <span>Universidad Politecnica de Pachuca</span>
+</nav>
+<div class="container">
+  <img src="assets/Usuario.png" alt="">
+  <form class="form" (submit)="login($event)">
+    <input type="text" class="input-user" placeholder="Matrícula" (input)="validateInput($event)" [(ngModel)]="matricula" name="matricula" maxlength="10" [class.input-error]="loginError">
+    <input type="password" class="input-pass" id="password" placeholder="Contraseña" [(ngModel)]="password" name="password">
+    <label *ngIf="loginError" class="error-message">Matricula o Contraseña incorrecto(s)</label> 
+    <div class="checkbox-container">
+      <input type="checkbox" id="togglePassword" (click)="togglePasswordVisibility()">
+      <label for="togglePassword" class="montserrat-label">Mostrar contraseña</label>
+    </div>
+    <div class="g-recaptcha" data-sitekey="6LdEGJgpAAAAAFRxni5RjEDuVDb6SN6T3MRLlvwo" data-callback="verifyCaptcha"></div>
+    <button type="submit">Iniciar sesión</button>
+  </form>
+  <a routerLink="/recovery">Recuperar contraseña</a>
+ 

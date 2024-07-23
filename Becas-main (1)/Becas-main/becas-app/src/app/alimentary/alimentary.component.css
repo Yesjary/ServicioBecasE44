@@ -1,0 +1,219 @@
+/* Estilos básicos para la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-responsive {
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+
+.full-container {
+  display: flex;
+}
+
+.full-container .menu {
+  width: 359px;
+  min-width: 359px;
+  height: 100vh;
+  padding-top: 56px;
+  margin-top: -56px;
+  background-color: #D9D9D9;
+  text-align: center;
+}
+
+.full-container .menu p {
+  margin-top: 27px;
+  margin-bottom: 26px;
+}
+
+.button-menu {
+  width: 224px;
+  height: 34px;
+  margin-top: 21px;
+  border-radius: 40px;
+  background-color: #290478;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  color: white;
+}
+
+ .button-menu:hover {
+  background-color: white;
+  color: #290478;
+}
+
+.full-container .menu .menu-title {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-size: 25px;
+}
+
+.full-container .container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 42px;
+}
+
+.full-container .container button{
+  margin-top: 21px;
+  border-radius: 40px;
+  padding: 6px 20px;
+  background-color: #290478;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  color: white;
+}
+
+.full-container .container button:hover{
+  margin-top: 21px;
+  border-radius: 40px;
+  padding: 2px 20px;
+  background-color: #D9D9D9;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  color: #290478;
+}
+
+.full-container .container .container-table{
+  width: 95%;
+}
+
+.full-container .container .title {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.full-container .container .container-sub-title {
+  text-align: left;
+}
+
+.full-container .container .container-sub-title .sub-title {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.full-container .container .container-form {
+  text-align: left;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.full-container .container .container-form .buttons {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 12px;
+}
+
+.full-container .container .container-form .buttons button, 
+input {
+  margin-left: 12px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  color: #aaa;
+  text-align: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin: 5px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 10px;
+  }
+
+  td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+}

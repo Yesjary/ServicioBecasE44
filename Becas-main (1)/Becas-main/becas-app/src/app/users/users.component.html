@@ -1,0 +1,32 @@
+<nav class="navbar">
+    <img src="assets/logoUpp.png" class="logo">
+    <span>Universidad Politecnica de Pachuca</span>
+</nav>
+<div class="full-container">
+    <div class="menu">
+        <p class="menu-title">Menu</p>
+        <button routerLink="/dashboard" class="menu-button">Inicio</button>
+        <button routerLink="/users" class="menu-button">Usuarios</button>
+        <button (click)="logOut()" class="menu-button">Cerrar sesion</button>
+    </div>
+    <div class="container">
+        <form class="form" (submit)="userRegister($event)">
+            <input type="text" placeholder="Matricula" name="matricula" (input)="validateInput($event)" [(ngModel)]="matricula" maxlength="10">
+            <input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="nombre">
+            <input type="text" placeholder="Apellido paterno" name="apellidoP" [(ngModel)]="apellidoP">
+            <input type="text" placeholder="Apellido materno" name="apellidoM" [(ngModel)]="apellidoM">
+            <input type="email" placeholder="Correo" name="correo" [(ngModel)]="correo">
+            <input type="password" placeholder="Contraseña" name="password" [(ngModel)]="password">
+            <input type="password" placeholder="Confirmar contraseña" name="passwordC" [(ngModel)]="passwordC">
+            <select name="rol" [(ngModel)]="rol">
+                <option value="" disabled hidden>Selecciona un rol</option>
+                <option value="Administrador">Administrador</option>
+                <option value="Lector">Lector</option>
+            </select>  
+            <div *ngIf="registrationError" class="error-message">Error en el registro. Inténtalo de nuevo.</div>
+            <div *ngIf="registrationSuccess" class="success-message">Registro exitoso</div>
+            <button>Registar usuario</button>
+        </form>
+        
+    </div>
+</div>

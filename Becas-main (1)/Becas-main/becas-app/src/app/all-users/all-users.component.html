@@ -1,0 +1,47 @@
+<nav class="navbar">
+    <img src="assets/logoUpp.png" class="logo">
+    <span>Universidad Politecnica de Pachuca</span>
+</nav>
+<div class="full-container">
+    <div class="menu">
+        <p class="menu-title">Menu</p>
+        <button class="button-menu" routerLink="/dashboard">Inicio</button>
+        <button class="button-menu" routerLink="/register">Registar usuario</button>
+        <button class="button-menu" (click)="logOut()">Cerrar Sesion</button> 
+    </div>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Matrícula</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Correo</th>
+                <th>Rol</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td>{{ user.matricula }}</td>
+                <td>{{ user.nombre }}</td>
+                <td>{{ user.apellidoP }}</td>
+                <td>{{ user.apellidoM }}</td>
+                <td>{{ user.correo }}</td>
+                <td>{{ user.rol }}</td>
+                <td>
+                    <button class="modify">
+                        Modificar
+                    </button>
+                    <button class="delete">
+                        Borrar
+                    </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+    </div>
+</div>

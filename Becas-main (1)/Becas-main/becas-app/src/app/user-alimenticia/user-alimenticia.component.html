@@ -1,0 +1,350 @@
+<nav class="navbar">
+    <img src="assets/logoUpp.png" class="logo">
+    <span>Universidad Politecnica de Pachuca</span>
+</nav>
+<div class="full-container">
+    <div class="menu">
+        <p class="menu-title">Menu</p>
+        <button class="button-menu" routerLink="/dashboard">Inicio</button>
+        <button class="button-menu" routerLink="/alimenticia">Beca alimenticia</button>
+        <button class="button-menu">Beca de equidad</button>
+        <button class="button-menu">Beca de representacion</button>
+        <button class="button-menu" (click)="logOut()">Cerrar Sesion</button>
+    </div>
+    <div class="col">
+        <h1> ESTUDIOSOCIOECNOMICO </h1>
+        <div class="container-form">
+            <div>
+                <h3> Datos Personales del Alumno </h3>
+                <select name="" id="">
+                    <option value="">--Seleccione Su Carrera--</option>
+                    <option value="">Biomedica</option>
+                    <option value="">Biotecnologia</option>
+                    <option value="">Financiera</option>
+                    <option value="">Mecanica Automotriz</option>
+                    <option value="">Mecatronica</option>
+                    <option value="">Software</option>
+                    <option value="">Terapia Física</option>
+                    <option value="">Médico Cirujano</option>
+                    <option value="">Sistemas y Tecnologías Industriales</option>
+                </select>
+                <input type="text" placeholder="CURP" maxlength="18">
+                <input type="text" value="Matricula" maxlength="10">
+                <input type="text" value="Cuatrimestre">
+                <div class="input-group radio">
+                    <label for=""> Sexo </label>
+                    <input type="radio" name="sexo" value="Masculino" checked>
+                    <label for="">Masculino</label>
+
+
+                    <input type="radio" name="sexo" value="Femenino" checked>
+                    <label for="">Femenino</label>
+                </div>
+                <input type="text" value="Apellido Paterno">
+                <input type="text" value="Apellido Materno">
+                <input type="text" name="" id="" value="Nombre(s)">
+                <input type="number" name="" id="" maxlength="10" placeholder="Numero de telefono">
+                <input type="email" name="" id="" value="Correo">
+                <div class="input-group radio">
+                    <label for=""> Habla alguna lengua indigena </label>
+                    <input type="radio" name="" checked>
+                    <label for="">Si</label>
+
+
+                    <input type="radio" name="" checked>
+                    <label for="">No</label>
+                </div>
+            </div>
+            <div>
+                <h3>Lugar de Nacimiento</h3>
+                <select name="" id="">
+                    <option value="">--Estado--</option>
+                </select>
+                <select name="" id="">
+                    <option value="">--Municipio--</option>
+                </select>
+                <select name="" id="">
+                    <option value="">--Localidad--</option>
+                </select>
+                <label>Fecha de nacimeinto</label>
+                <input type="date" name="" id="">
+            </div>
+            <div>
+                <h3>Domicilio</h3>
+                <input type="text" name="" id="" value="Calle y numero">
+                <select name="" id="">
+                    <option value="">--Localidad--</option>
+                </select>
+                <select name="" id="">
+                    <option value="">--Colonia--</option>
+                </select>
+                <select name="" id="">
+                    <option value="">--Municipio--</option>
+                </select>
+                <select name="" id="">
+                    <option value="">--Estado--</option>
+                </select>
+                <input type="text" name="" id="" placeholder="Referencia de Ubicacion">
+            </div>
+            <div>
+                <h3>Datos Familiares<>
+                        <input type="text" name="" id="" placeholder="Nombre del Padre o tutor">
+                        <input type="text" name="" id="" placeholder="Edad">
+                        <input type="text" name="" id="" placeholder="Ocupacion">
+                        <select name="" id="">
+                            <option value="">--Escolaridad--</option>
+                            <option value="">Secundaria trunca</option>
+                            <option value="">Secundaia Terminada</option>
+                            <option value="">Preparatoria trunca</option>
+                            <option value="">Preparatoria Terminada</option>
+                            <option value="">Licenciatura trunca</option>
+                            <option value="">Licenciatura</option>
+                            <option value="">Posgrado</option>
+                        </select>
+                        <input type="text" name="" id="" placeholder="Nombre de la madre">
+                        <input type="text" name="" id="" placeholder="Edad">
+                        <input type="text" name="" id="" placeholder="Ocupacion">
+                        <select name="" id="">
+                            <option value="">--Escolaridad--</option>
+                            <option value="">Secundaria trunca</option>
+                            <option value="">Secundaia Terminada</option>
+                            <option value="">Preparatoria trunca</option>
+                            <option value="">Preparatoria Terminada</option>
+                            <option value="">Licenciatura trunca</option>
+                            <option value="">Licenciatura</option>
+                            <option value="">Posgrado</option>
+                        </select>
+                        <label> Domicilio del Padre </label>
+                        <select name="" id="">
+                            <option value="">--Municipio--</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="">--Estado--</option>
+                        </select>
+                        <input type="number" name="" id="" maxlength="5" placeholder="CP">
+                        <input type="tel" name="" id="" maxlength="10" placeholder="Numero de telefono">
+                        <div class="input-group radio">
+                            <label> Habla alguna lengua indigena </label>
+                            <input type="radio" name="" checked>
+                            <label for="">Si</label>
+
+
+                            <input type="radio" name="" checked>
+                            <label for="">No</label>
+                        </div>
+                        <input type="text" name="" id="" placeholder="Domicilio de trabajo">
+                        <input type="number" name="" id="" maxlength="10" placeholder="Telefono de trabajo">
+                        <input type="tel" maxlength="10" placeholder="Numero de hermanos">
+                        <label> Domicilio de la Madre </label>
+                        <select name="" id="">
+                            <option value="">--Municipio--</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="">--Estado--</option>
+                        </select>
+                        <input type="number" name="" id="" maxlength="5" placeholder="CP">
+                        <input type="tel" name="" id="" maxlength="10" placeholder="Numero de telefono">
+                        <div class="input-group radio">
+                            <label> Habla alguna lengua indigena </label>
+                            <input type="radio" name="" checked>
+                            <label for="">Si</label>
+
+
+                            <input type="radio" name="" checked>
+                            <label for="">No</label>
+                        </div>
+                        <input type="text" name="" id="" placeholder="Domicilio de trabajo">
+                        <input type="number" name="" id="" maxlength="10" placeholder="Telefono de trabajo">
+                        <input type="tel" maxlength="10" placeholder="Numero de hermanos">
+
+                        <div class="container">
+                            <h3>Ingresos Economicos Familiares</h3>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre del Familiar</th>
+                                        <th>Empresa</th>
+                                        <th>Telefono</th>
+                                        <th>Puesto</th>
+                                        <th>Antiguedad de Años</th>
+                                        <th>Persepcion mensual</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- <tr *ngFor="let user of users">
+                            <td>{{ user.nombreFamiliar }}</td>
+                            <td>{{ user.empresa}}</td>
+                            <td>{{ user.telefono }}</td>
+                            <td>{{ user.puesto }}</td>
+                            <td>{{ user.antiguedadAños }}</td>
+                            <td>{{ user.presepcionMensual }}</td>
+                        </tr> -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <h3>Gastos Mnesuales</h3>
+                            <input type="number" placeholder="Gatos Mensuales">
+                            <input type="text" name="" id="" placeholder="Observaciones">
+                            <div class="input-group radio">
+                                <label> Vive en casa propia: </label>
+                                <input type="radio" name="" checked>
+                                <label for="">Si</label>
+
+
+                                <input type="radio" name="" checked>
+                                <label for="">No</label>
+                            </div>
+                            <div class="input-group radio">
+                                <label> Cuenta con servicios Medicos: </label>
+                                <input type="radio" name="" value="Si" checked>
+                                <label>Si</label>
+
+
+                                <input type="radio" name="" value="No" checked>
+                                <label>No</label>
+                            </div>
+                            <div class="input-group radio">
+                                <label>Cuenta con servicios medicos</label>
+                                <input type="radio" name="" id="" checked>
+                                <label for="">Si</label>
+                                <input type="radio" name="" id="" checked>
+                                <label for="">No</label>
+                            </div>
+                            <div>
+                                <label for="">Algun miembro de familia tiene algun padecimiento cronico enfermedad
+                                    grave</label>
+                                <input type="radio" name="" id="" checked>
+                                <label for="">Si </label>
+                                <input type="radio" name="" id="" checked>
+                                <label for="">No</label>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Necesidades Urgentes de la Familia</h3>
+                            <h4>Marque en caso de que la necesidad sea urgente</h4>
+                            <label for="">Servicios Medicos</label>
+                            <input type="checkbox" name="" id="">
+                            <label for="">Alimentacion</label>
+                            <input type="checkbox" name="" id="">
+                            <label for="">Vivienda</label>
+                            <input type="checkbox" name="" id="">
+                            <label for="">Vestido</label>
+                            <input type="checkbox" name="" id="">
+                            <label for="">Trabajo</label>
+                            <input type="checkbox" name="" id="">
+                            <label for="">Transporte</label>
+                            <input type="checkbox" name="" id="">
+                            <label for="">Educacion</label>
+                            <input type="checkbox" name="" id="">
+                            <label for="">Servicios Publicos</label>
+                            <input type="checkbox" name="" id="">
+                            <input type="text" name="" id="" placeholder="Otros(Especifique)">
+                        </div>
+                        <div>
+                            <h3>Condiciones de la casa</h3>
+                            <select name="" id="">
+                                <option value="">--Zona de la casa--</option>
+                                <option value=""> Urbana</option>
+                                <option value="">Rural</option>
+                                <option value="">Semiurbana</option>
+                            </select>
+                            <label for="">Caracteristicas de la casa</label>
+                            <select>
+                                <option value="">Propia</option>
+                                <option value="">Rentada</option>
+                                <option value="">Prestada</option>
+                                <option value="">Hipotecada</option>
+                                <option value="">Casa sola</option>
+                                <option value="">Departamento</option>
+                            </select>
+                            <label for="">Material de construccion</label>
+                            <select name="" id="">
+                                <option value="">Los pisos son de</option>
+                                <option value="">Mosaico</option>
+                                <option value="">Loseta</option>
+                                <option value="">Tierra</option>
+                                <option value="">Duela</option>
+                                <option value="">Cemento</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="">las paredes son de</option>
+                                <option value="">Ladrillo</option>
+                                <option value="">Concreto</option>
+                                <option value="">Lamina</option>
+                                <option value="">Block</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="">El techo es de</option>
+                                <option value="">Lamina</option>
+                                <option value="">Losa</option>
+                                <option value="">Concreto</option>
+                            </select>
+                            <label for="">La casa en donde vive cuenta con</label>
+                            <div>
+                                <label for="">Sala</label>
+                                <input type="checkbox" name="" id="">
+                                <label for="">Comedor</label>
+                                <input type="checkbox" name="" id="">
+                                <label for="">Cocina</label>
+                                <input type="checkbox" name="" id="">
+                                <label for="">Baño</label>
+                                <input type="checkbox" name="" id="">
+                                <label for="">Recamara</label>
+                                <input type="checkbox" name="" id="">
+                                <label for="">Patio</label>
+                                <input type="checkbox" name="" id="">
+                            </div>
+                            <label for="">Bienes con los que cuenta la casa</label>
+                            <div>
+                                <label for="">Refrigerador</label>
+                                <input type="checkbox" name="" id="">
+                                <label for="">Estufa</label>
+                                <input type="checkbox" name="" id="">
+                                <label for="">Lavadora</label>
+                                <input type="checkbox" name="" id="">
+                                <label for="">Estereo</label>
+                                <input type="checkbox" name="" id="">
+                                <label for="">Telefono Celular</label>
+                                <input type="checkbox" name="" id="">
+                                <label for="">Television</label>
+                                <input type="checkbox" name="" id="">
+                                <label for="">Video Grabadora/DVD</label>
+                                <input type="checkbox" name="" id="">
+                                <label for="">Cama</label>
+                                <input type="checkbox" name="" id="">
+                                <label for="">Computadora</label>
+                                <input type="checkbox" name="" id="">
+                                <label for="">Automovil</label>
+                                <input type="checkbox" name="" id="">
+                                <label for="">Internet</label>
+                                <input type="checkbox" name="" id="">
+                            </div>
+                            <label for="">Servicios y vienes con los que cuenta la casa</label>
+                            <select name="" id="">
+                                <option value="">Agua</option>
+                                <option value="">Agua potable</option>
+                                <option value="">Pipas</option>
+                                <option value="">Acarreo</option>
+                                <option value="">Pozo</option>
+                                <option value="">Toma domiciliaria</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="">Luz</option>
+                                <option value="">Luz Electrica</option>
+                                <option value="">Lamparas</option>
+                                <option value="">Velas</option>
+                                <option value="">Alumbrado Publico</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="">Drenaje</option>
+                                <option value="">Drenaje Publico</option>
+                                <option value="">Fosa septica</option>
+                                <option value="">Letrnia</option>
+                                <option value="">Al aire libre</option>
+                            </select>
+                        </div>
+                        <button>Descargar Archivo a Firmar</button>
+                        <input type="file" name="" id="" value="Subir Archivo Firmado">
+            
