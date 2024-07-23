@@ -1,0 +1,5 @@
+# GET http://localhost:4000/api/usuarios
+# Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDg3NmFmMmY3NjMyOTM2YmQwOGRmZSIsImlhdCI6MTcxMjEyNDI1NywiZXhwIjoxNzEyMjEwNjU3fQ.BnSgcvGSehOfvR_roq_46TcpOZVC5gHgpT9W3fhSxCs
+
+GET  http://localhost:4000/api/refresh-token
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDg3NmFmMmY3NjMyOTM2YmQwOGRmZSIsImlhdCI6MTcxMjIwOTgwNiwiZXhwIjoxNzEyMjk2MjA2fQ.U8Tu0AthAYWkWNzEXwFZGR_G2ubnu4X87AGzalOH-gg
