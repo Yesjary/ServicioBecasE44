@@ -1,0 +1,42 @@
+<div class="full-container">
+    <!-- Menú Lateral -->
+    <div class="menu">
+      <h1 class="menu-title">Becas Externas</h1>
+      <button class="button-menu">Inicio</button>
+      <button class="button-menu">Requisitos</button>
+      <button class="button-menu">Historial</button>
+      <p>Información adicional</p>
+    </div>
+  
+    <!-- Contenedor del Formulario -->
+    <div class="container-form">
+      <!-- Datos Personales del Alumno -->
+      <div>
+        <h3>Datos Personales del Alumno</h3>
+        <input type="number" placeholder="Folio" [(ngModel)]="beca.folio">
+        <input type="number" placeholder="Matrícula" [(ngModel)]="beca.matricula">
+        <input type="text" placeholder="Nombre" [(ngModel)]="beca.nombre">
+        <input type="text" placeholder="Apellido Paterno" [(ngModel)]="beca.apellidoP">
+        <input type="text" placeholder="Apellido Materno" [(ngModel)]="beca.apellidoM">
+        <input type="text" placeholder="CURP" [(ngModel)]="beca.curp">
+        <input type="number" placeholder="Teléfono" [(ngModel)]="beca.telefono">
+        <input type="text" placeholder="Programa Educativo" [(ngModel)]="beca.programaE">
+        <input type="email" placeholder="Correo Electrónico" [(ngModel)]="beca.correo">
+        <input type="date" placeholder="Fecha de Inicio" [(ngModel)]="beca.inicio">
+        <input type="date" placeholder="Fecha de Término" [(ngModel)]="beca.termino">
+      </div>
+      
+      <!-- Requisitos -->
+      <div>
+        <h3>Requisitos</h3>
+        <input type="text" placeholder="Solicitud" [(ngModel)]="beca.requisitos.solicitud">
+        <input type="text" placeholder="Constancia" [(ngModel)]="beca.requisitos.constancia">
+        <input type="text" placeholder="Historial" [(ngModel)]="beca.requisitos.historial">
+      </div>
+      
+      <!-- Botones -->
+      <button class="button-menu">Descargar Archivo a Firmar</button>
+      <input type="file" name="upload-file" id="upload-file" placeholder="Subir Archivo Firmado">
+    </div>
+  </div>
+  

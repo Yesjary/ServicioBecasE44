@@ -4,6 +4,9 @@ const app = express();
 const cors = require('cors');
 const { validateToken } = require('./controllers/authController');
 const PORT = 4000;
+const becasExternasRoutes = require('./routes/becasExternas');
+app.use('/api', becasExternasRoutes);
+
 
 conectarDB();
 app.use(cors())
