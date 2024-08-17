@@ -10,6 +10,7 @@ import { AllUsersComponent } from './all-users/all-users.component';
 import { InternasComponent } from './internas/internas.component';
 import { UserAlimenticiaComponent } from './user-alimenticia/user-alimenticia.component';
 
+
 export const routes: Routes = [
     {path: 'login', component: LoginComponent, canActivate:[dashboardGuard]},
     {path: 'recovery', component: RecoveryComponent, canActivate:[dashboardGuard]},
@@ -20,4 +21,5 @@ export const routes: Routes = [
     {path: 'register', component: UsersComponent},
     {path: 'becas-internas', component: InternasComponent},
     {path: '', redirectTo: '/login', pathMatch:"full"}
+    
 ];
