@@ -11,6 +11,8 @@ import { RecoveryComponent } from './recovery.component';
   imports: [
     CommonModule,  // Incluye CommonModule aquí
     FormsModule
-  ]
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class RecoveryModule { }
