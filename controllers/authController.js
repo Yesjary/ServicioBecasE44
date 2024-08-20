@@ -73,40 +73,13 @@ exports.recoverPassword = async (req, res) => {
     const { email } = req.body;
 
     try {
-        const user = await User.findOne({ correo: email });
-        if (!user) {
-            return res.status(404).json({ message: 'Usuario no encontrado' });
-        }
 
-        const token = jwt.sign({ id: user.id }, SECRET_KEY, { expiresIn: expireIn });
+        console.log(`Envío de correo a: ${email}`);
 
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: 'tuCorreo@gmail.com',
-                pass: 'tuContraseña'
-            }
-        });
-
-        const mailOptions = {
-            from: 'tuCorreo@gmail.com',
-            to: user.correo,
-            subject: 'Recuperación de Contraseña',
-            text: `Por favor, usa el siguiente enlace para recuperar tu contraseña: http://localhost:4200/reset-password?token=${token}`
-        };
-
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                console.error('Error al enviar correo:', error);
-                return res.status(500).json({ message: 'Error al enviar el correo' });
-            } else {
-                console.log('Correo enviado:', info.response);
-                return res.status(200).json({ message: 'Correo de recuperación enviado' });
-            }
-        });
+        res.status(200).json({ message: 'Correo de recuperación enviado' });
 
     } catch (error) {
         console.error('Error en la recuperación de contraseña:', error);
         res.status(500).json({ message: 'Error en el servidor' });
     }
-}
+};
