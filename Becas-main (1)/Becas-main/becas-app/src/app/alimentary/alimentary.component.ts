@@ -2,20 +2,30 @@ import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import jspdf from 'jspdf';
 import { AuthService } from '../service/auth.service';
+import { CommonModule } from '@angular/common'; // Importa CommonModule
 import { FormsModule } from '@angular/forms'; 
+import { AlimenticiaService } from '../service/alimenticia.service';
 
 @Component({
   selector: 'app-alimentary',
   standalone: true,
   templateUrl: './alimentary.component.html',
   styleUrls: ['./alimentary.component.css'],
-  imports: [FormsModule, RouterLink]
+  imports: [CommonModule, FormsModule, RouterLink] // Añade CommonModule aquí
 })
 export class AlimentaryComponent {
   startDate = ''; 
   endDate = '';
-
+  private alimenticiaService  = inject(AlimenticiaService)
+  alimenticia: any[] = []; //hace refencia a archivo alimentica.service
+  totalAlumnosBecados: number = 0;  // Propiedad para el total de alumnos, se inicializa en 0 y cada que se registra 1 aumenta el valor
   authService = inject(AuthService);
+
+
+  //generar el constructor del metodo get
+  constructor (){
+    this.getAUsers()
+   }
 
   logOut() {
     return this.authService.logout();
@@ -91,4 +101,13 @@ export class AlimentaryComponent {
     console.log('Fecha de término:', this.endDate);
     this.generateTickets();
   }
-}
+  //se implementa el metodo get
+  getAUsers(): void {
+    this.alimenticiaService.getAUsers().subscribe((res) => {
+      this.alimenticia = res as any[];
+      this.totalAlumnosBecados = this.alimenticia.length; // Actualiza el total de alumnos becados
+      console.log(this.alimenticia);
+    }, error => {
+      console.error('Error al obtener alumnos:', error);
+    });
+  }}

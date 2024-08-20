@@ -1,29 +1,29 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AuthService } from './auth.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RegisterService {
+export class AlimRegisterService {
   private http = inject(HttpClient);
-  private authService = inject(AuthService);
 
-  // constructor() { }
-
-  register(user:{
+  //constructor() { }
+  registeralm(useralimenticia:{
+    curp:string;
     matricula: number;
-    nombre: string;
     apellidoP: string;
     apellidoM: string;
+    nombre: string;
+    carrera: string;
+    cuatrimestre: string;
+    sexo: string;
+    telefono: string;
     correo: string;
-    password: string;
-    rol: string
   }): Observable<any>{
     const token = localStorage.getItem('JWT_TOKEN');
     if(token){
-      return this.http.post('http://localhost:4000/api/usuarios', user, {
+      return this.http.post('http://localhost:4000/api/alimenticia', useralimenticia, {
       headers:{
         Authorization: token
       }});
@@ -31,5 +31,4 @@ export class RegisterService {
       return new Observable<any>();
     }
   }
-  
 }

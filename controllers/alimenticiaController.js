@@ -3,15 +3,31 @@ const Alimenticia = require('../models/alimenticia');
 // Crear una nueva solicitud de beca alimenticia
 exports.crearSolicitud = async (req, res) => {
     try {
-        const solicitud = new Alimenticia(req.body);
-        await solicitud.save();
-        res.status(201).json(solicitud);
-        console.log(solicitud);
+        // Datos del usuario extraídos del cuerpo de la solicitud
+        const nuevaSolicitud = {
+            curp: req.body.curp,
+            matricula: req.body.matricula,
+            apellidoP: req.body.apellidoP,
+            apellidoM: req.body.apellidoM,
+            nombre: req.body.nombre,
+            carrera: req.body.carrera,
+            cuatrimestre: req.body.cuatrimestre,
+            sexo: req.body.sexo,
+            telefono: req.body.telefono,
+            correo: req.body.correo
+        };
+
+        // Crear la nueva solicitud en la base de datos
+        const solicitudCreada = await Alimenticia.create(nuevaSolicitud);
+        
+        // Responder con la solicitud creada
+        res.status(201).json(solicitudCreada);
+        console.log(solicitudCreada);
     } catch (error) {
         console.log(error);
-        res.status(500).send('Hubo un error al crear la solicitud');
+        res.status(500).send('Hubo un error');
     }
-};
+}
 
 // Obtener todas las solicitudes de beca alimenticia
 exports.obtenerSolicitudes = async (req, res) => {
