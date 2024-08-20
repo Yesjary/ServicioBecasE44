@@ -216,4 +216,19 @@ input {
     font-weight: bold;
     text-align: left;
   }
+  .deelete{
+    margin: 2.5px;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 2px;
+    border: 1px solid transparent;
+  }
+
+  .modify{
+    margin: 2.5px;
+    background-color: #ffc107;
+    color: black;
+    border-radius: 2px;
+    border: 1px solid transparent;
+  }
 }

@@ -10,6 +10,7 @@ app.use(cors())
 app.use(express.json());
 app.use('/api',require('./routes/authRoute'));
 app.use('/api/usuarios', validateToken ,require('./routes/usuariosRoute'));
+app.use('/api/alimenticia', validateToken, require('./routes/alimenticiaRoute'));
 
 app.listen(PORT, () => {
     console.log(`Servidor iniciado en http://localhost:${PORT}`)

@@ -50,4 +50,4 @@ const UsuarioSchema = mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('usuario', UsuarioSchema)
+module.exports = mongoose.model('usuarios', UsuarioSchema)

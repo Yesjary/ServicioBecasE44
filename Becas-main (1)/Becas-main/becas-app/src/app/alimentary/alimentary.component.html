@@ -18,7 +18,8 @@
             </div>
             <div class="container-form">
                 <form action="" class="form">
-                    <label> TOTAL DE ALUMNOS BECADOS: </label>
+                    <!--exportamos la clase generada para el total de alumnos-->>
+                    <label> TOTAL DE ALUMNOS BECADOS: {{ totalAlumnosBecados }} </label>
                     <div class="buttons">
                         <button routerLink="/becados_alimenticia">Añadir nuevo becado</button>
                         <button>Generar Excel</button>
@@ -30,45 +31,44 @@
                         <table>
                             <thead style="background: #290478">
                                 <tr>
-                                    <th style="font-size: 12; text-align: center;">
-                                        <font color="white">Folio</font>
-                                    </th>
-                                    <th style="font-size: 12; text-align: center;">
-                                        <font color="white">Matricula</font>
-                                    </th>
-                                    <th style="font-size: 12; text-align: center;">
-                                        <font color="white">Nombre</font>
-                                    </th>
-                                    <th style="font-size: 12; text-align: center;">
-                                        <font color="white">Apellido Paterno</font>
-                                    </th>
-                                    <th style="font-size: 12; text-align: center;">
-                                        <font color="white">Apellido Materno</font>
-                                    </th>
-                                    <th style="font-size: 12; text-align: center;">
-                                        <font color="white">Correo Electronico</font>
-                                    </th>
-                                    <th style="font-size: 12; text-align: center;">
+                                    <th style="font-size: 11; text-align: center;">
                                         <font color="white">CURP</font>
                                     </th>
-                                    <th style="font-size: 12; text-align: center;">
+                                    <th style="font-size: 11; text-align: center;">
+                                        <font color="white">Matricula</font>
+                                    </th>
+                                    <th style="font-size: 11; text-align: center;">
+                                        <font color="white">Apellido Paterno</font>
+                                    </th>
+                                    <th style="font-size: 11; text-align: center;">
+                                        <font color="white">Apellido Materno</font>
+                                    </th>
+                                    <th style="font-size: 11; text-align: center;">
+                                        <font color="white">Nombre</font>
+                                    </th>
+                                    <th style="font-size: 11; text-align: center;">
                                         <font color="white">Programa Educativo</font>
                                     </th>
-                                    <th style="font-size: 12; text-align: center;">
-                                        <font color="white">Fecha de Inicio</font>
-                                    </th>
-                                    <th style="font-size: 12; text-align: center;">
-                                        <font color="white">Fecha de terminacion</font>
-                                    </th>
-                                    <th style="font-size: 12; text-align: center;">
-                                        <font color="white">Requisitos</font>
+                                    <th style="font-size: 11; text-align: center;">
+                                        <font color="white">Cuatrimestre</font>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    
-                                </tr>
+                                <!-- Conexion entre la BD y la tabla
+                                 hay que refenciar primero nuestra tabla y despues a la direccion donde se encuntra nuestra
+                                 api con el metodo get  -->
+                                  <tr *ngFor="let useralimenticia of alimenticia">
+                <td>{{ useralimenticia.curp }}</td>
+                <td>{{ useralimenticia.matricula }}</td>
+                <td>{{ useralimenticia.apellidoP }}</td>
+                <td>{{ useralimenticia.apellidoM }}</td>
+                <td>{{ useralimenticia.nombre }}</td>
+                <td>{{ useralimenticia.carrera }}</td>
+                <td>{{ useralimenticia.cuatrimestre }}</td>
+                <td>
+                </td>
+              </tr>
                             </tbody>
                         </table>
                     </div>

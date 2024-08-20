@@ -1,82 +1,54 @@
 const mongoose = require('mongoose');
-const AlimenticiaSchema = mongoose.Schema({
 
-    Folio:{
+const AlimenticiaSchema = mongoose.Schema({
+    curp: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true
+    },
+    matricula: {
         type: Number,
-        require: true,
+        required: true,
         unique: true,
         trim: true
     },
-    matricula:{
-        type: Number,
-        require: true,
-        unique: true,
-        trim: true
-    },
-    nombre:{
+    apellidoP: {
         type: String,
-        require: true,
+        required: true,
         trim: true
     },
-    apellidoP:{
+    apellidoM: {
         type: String,
-        require: true,
+        required: true,
         trim: true
     },
-    apellidoM:{
+    nombre: {
         type: String,
-        require: true,
+        required: true,
         trim: true
     },
-    curp:{
+    carrera: {
         type: String,
-        require: true,
-        unique: true,
-        trim: true
+        enum: ['Biomedica', 'Biotecnologia', 'Financiera', 'Mecanica Automotriz', 'Mecatronica', 'Software', 'Terapia Física', 'Médico Cirujano', 'Sistemas y Tecnologías Industriales'],
+        required: true // Asegura que el campo sea obligatorio
     },
-    telefono:{
-        type: Number,
-        require: true,
-        trim: true
-    },
-    programaE:{
+    cuatrimestre: {
         type: String,
-        require: true,
-        trim: true
+        enum: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
+        required: true // Asegura que el campo sea obligatorio
     },
-    correo:{
+    sexo: {
+        type: String,
+        enum: ['Masculino', 'Femenino'],
+        required: true // Asegura que el campo sea obligatorio
+    },
+    correo: {
         type: String,
         unique: true,
-        require: true,
-        trim: true
-    },
-    inicio:{
-        type: Date,
-        require: true
-    },
-    termino:{
-        type: Date,
-        require: true
-    },
-    requisitos:{
-        solicitud:{
-            type: String,
-            require: true,
-            trim: true
-        },
-        constancia:{
-            type: String,
-            require: true,
-            trim: true
-        },
-        // socioeconomico:{
-            
-        // }
-        historial:{
-            type: String,
-            require: true,
-            trim: true
-        }
+        required: true,
+        trim: true     
     }
 });
-module.exports = mongoose.model('alimenticia', AlimenticiaSchema)
+
+module.exports = mongoose.model('Alimenticia', AlimenticiaSchema);

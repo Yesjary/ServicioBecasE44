@@ -6,52 +6,54 @@
     <div class="menu">
         <p class="menu-title">Menu</p>
         <button class="button-menu" routerLink="/dashboard">Inicio</button>
-        <button class="button-menu" (click)="logOut()">Cerrar Sesion</button>
+
     </div>
     <div class="col">
-        <h1> ESTUDIO SOCIOECONOMICO </h1>
+        <h1> Registro Alumno </h1>
             <div class="container">
-                   <form class="form">
+                   <form class="form" (submit)="useralmRegister($event)">
                     <h3> Datos del Alumno </h3>
-                <select name="" id="">
+                <input type="text" placeholder="CURP" maxlength="18" name="curp" [(ngModel)]="curp">
+                <input type="number" placeholder="Matricula" maxlength="10" name="matricula" [(ngModel)]="matricula">
+                <input type="text" placeholder="Apellido Paterno" name="apellidoP" [(ngModel)]="apellidoP">
+                <input type="text" placeholder="Apellido Materno" name="apellidoM" [(ngModel)]="apellidoM">
+                <input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="nombre">
+                <select name="carrera" [(ngModel)]="carrera">
                     <option value="">--Seleccione Su Carrera--</option>
-                    <option value="">Biomedica</option>
-                    <option value="">Biotecnologia</option>
-                    <option value="">Financiera</option>
-                    <option value="">Mecanica Automotriz</option>
-                    <option value="">Mecatronica</option>
-                    <option value="">Software</option>
-                    <option value="">Terapia Física</option>
-                    <option value="">Médico Cirujano</option>
-                    <option value="">Sistemas y Tecnologías Industriales</option>
+                    <option value="Biomedica">Biomedica</option>
+                    <option value="Biotecnologia">Biotecnologia</option>
+                    <option value="Financiera">Financiera</option>
+                    <option value="Mecanica Automotriz">Mecanica Automotriz</option>
+                    <option value="Mecatronica">Mecatronica</option>
+                    <option value="Software">Software</option>
+                    <option value="Terapia Física">Terapia Física</option>
+                    <option value="Médico Cirujano">Médico Cirujano</option>
+                    <option value="Sistemas y Tecnologías Industriales">Sistemas y Tecnologías Industriales</option>
                 </select>
-                <input type="text" placeholder="CURP" maxlength="18">
-                <input type="text" value="Matricula" maxlength="10">
-                <input type="text" value="Cuatrimestre">  
-                <select name="" id="">
+                
+                <select name="cuatrimestre" [(ngModel)]="cuatrimestre">
+                    <option value="">--Seleccione Su Cuatrimestre--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+                <select name="sexo" [(ngModel)]="sexo">
                     <option value="">--Sexo--</option>
-                    <option value="">Masculino</option>
-                    <option value="">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
                 </select>
-                <input type="text" placeholder="Apellido paterno" name="apellidoP" >
-                <input type="text" value="Apellido Materno">
-                <input type="text" placeholder="Nombre" name="nombre">
-                <input type="number" name="" id="" maxlength="10" placeholder="Numero de telefono">
-                <input type="email" name="" id="" value="Correo">
-                <div class="input-group radio">
-                    <label for=""> Habla alguna lengua indigena </label>
-                    <input type="radio" name="" checked>
-                    <label for="">Si</label>
-                    <input type="radio" name="" checked>
-                    <label for="">No</label>
-                </div>
+                <input type="number" name="numero" id="" maxlength="10" placeholder="Numero de telefono"[(ngModel)]="telefono">
+                <input type="email" name="correo" id="" placeholder="Correo" [(ngModel)]="correo">
+                <div *ngIf="registrationError" class="error-message">Error en el registro. Inténtalo de nuevo.</div>
+                <div *ngIf="registrationSuccess" class="success-message">Registro exitoso</div>
                 <button>Registar usuario</button>
                    </form> 
-                
-                  
-                    
-             
-                
             </div>
             <div>
                 
