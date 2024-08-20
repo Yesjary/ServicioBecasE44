@@ -4,9 +4,9 @@
 </nav>
 <div class="container">
   <img src="assets/Usuario.png" alt="">
-  <form (submit)="recoverPassword($event)">
-    <label for="email">Correo Electrónico:</label>
-    <input id="email" name="email" type="email" [(ngModel)]="email" required />
+  <form class="form" (submit)="recoverPassword($event)">
+    <label for="email" class="input-label">Correo Electrónico:</label>
+    <input id="email" name="email" type="email" class="input-user" placeholder="Introduce tu correo" [(ngModel)]="email" required />
     
     <button type="submit">Recuperar Contraseña</button>
   
@@ -20,6 +20,5 @@
   </form>
   
   <!-- Enlace para volver al inicio de sesión -->
-  <a routerLink="/login">Volver al inicio de sesión</a>
-  
+  <a routerLink="/login" routerLinkActive="active">Volver al inicio de sesión</a>
 </div>
