@@ -1,42 +1,95 @@
+<nav class="navbar">
+  <img src="assets/logoUpp.png" class="logo">
+  <span>Universidad Politecnica de Pachuca</span>
+</nav>
 <div class="full-container">
-    <!-- Menú Lateral -->
-    <div class="menu">
-      <h1 class="menu-title">Becas Externas</h1>
-      <button class="button-menu">Inicio</button>
-      <button class="button-menu">Requisitos</button>
-      <button class="button-menu">Historial</button>
-      <p>Información adicional</p>
-    </div>
-  
-    <!-- Contenedor del Formulario -->
-    <div class="container-form">
-      <!-- Datos Personales del Alumno -->
-      <div>
-        <h3>Datos Personales del Alumno</h3>
-        <input type="number" placeholder="Folio" [(ngModel)]="beca.folio">
-        <input type="number" placeholder="Matrícula" [(ngModel)]="beca.matricula">
-        <input type="text" placeholder="Nombre" [(ngModel)]="beca.nombre">
-        <input type="text" placeholder="Apellido Paterno" [(ngModel)]="beca.apellidoP">
-        <input type="text" placeholder="Apellido Materno" [(ngModel)]="beca.apellidoM">
-        <input type="text" placeholder="CURP" [(ngModel)]="beca.curp">
-        <input type="number" placeholder="Teléfono" [(ngModel)]="beca.telefono">
-        <input type="text" placeholder="Programa Educativo" [(ngModel)]="beca.programaE">
-        <input type="email" placeholder="Correo Electrónico" [(ngModel)]="beca.correo">
-        <input type="date" placeholder="Fecha de Inicio" [(ngModel)]="beca.inicio">
-        <input type="date" placeholder="Fecha de Término" [(ngModel)]="beca.termino">
-      </div>
+  <div class="menu">
+      <p class="menu-title">Menu</p>
+      <button class="button-menu" routerLink="/dashboard">Inicio</button>
+      <button class="button-menu" routerLink="/becas-externas">Beca Externa</button>
       
-      <!-- Requisitos -->
-      <div>
-        <h3>Requisitos</h3>
-        <input type="text" placeholder="Solicitud" [(ngModel)]="beca.requisitos.solicitud">
-        <input type="text" placeholder="Constancia" [(ngModel)]="beca.requisitos.constancia">
-        <input type="text" placeholder="Historial" [(ngModel)]="beca.requisitos.historial">
-      </div>
-      
-      <!-- Botones -->
-      <button class="button-menu">Descargar Archivo a Firmar</button>
-      <input type="file" name="upload-file" id="upload-file" placeholder="Subir Archivo Firmado">
-    </div>
+      <button class="button-menu" (click)="logOut()">Cerrar Sesion</button>
   </div>
-  
+  <div class="container">
+      <div class="container-table">
+          <label class="title">BECAS Externas</label><br>
+          <div class="container-sub-title">
+              <label class="sub-title">Beca Externa</label>
+          </div>
+          <div class="container-form">
+              <form action="" class="form">
+                  <!--exportamos la clase generada para el total de alumnos-->>
+                  <label> TOTAL DE ALUMNOS BECADOS: {{ totalAlumnosBecados }} </label>
+                  <div class="buttons">
+                      <button routerLink="/becados_externa">Añadir nuevo becado</button>
+                      <button>Generar Excel</button>
+                      <button>Generar PDF</button>
+                      <button (click)="openModal()"> Generar Vale </button>
+                  </div>
+                  <!-- TABLA QUE MUESTRA LOS DATOS DE LOS BECADOS -->
+                  <div class="table-responsive">
+                      <table>
+                          <thead style="background: #290478">
+                              <tr>
+                                  <th style="font-size: 11; text-align: center;">
+                                      <font color="white">CURP</font>
+                                  </th>
+                                  <th style="font-size: 11; text-align: center;">
+                                      <font color="white">Matricula</font>
+                                  </th>
+                                  <th style="font-size: 11; text-align: center;">
+                                      <font color="white">Apellido Paterno</font>
+                                  </th>
+                                  <th style="font-size: 11; text-align: center;">
+                                      <font color="white">Apellido Materno</font>
+                                  </th>
+                                  <th style="font-size: 11; text-align: center;">
+                                      <font color="white">Nombre</font>
+                                  </th>
+                                  <th style="font-size: 11; text-align: center;">
+                                      <font color="white">Programa Educativo</font>
+                                  </th>
+                                  <th style="font-size: 11; text-align: center;">
+                                      <font color="white">Cuatrimestre</font>
+                                  </th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <!-- Conexion entre la BD y la tabla
+                               hay que refenciar primero nuestra tabla y despues a la direccion donde se encuntra nuestra
+                               api con el metodo get  -->
+                               <tr *ngFor="let userexterna of externa">
+              <td>{{ userexterna.curp }}</td>
+              <td>{{ userexterna.matricula }}</td>
+              <td>{{ userexterna.apellidoP }}</td>
+              <td>{{ userexterna.apellidoM }}</td>
+              <td>{{ userexterna.nombre }}</td>
+              <td>{{ userexterna.carrera }}</td>
+              <td>{{ userexterna.cuatrimestre }}</td>
+              <td>
+              </td>
+            </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+    <!-- Inicio de Modal Fecha-->
+  <div class="modal" id="dateModal">
+      <div class="modal-content">
+          <span class="close" (click)="closeModal()">&times;</span>
+          <form>
+              <div class="form-group">
+                  <label for="startDate">Fecha de Inicio:</label>
+                  <input type="date" id="startDate" autocomplete="off" [(ngModel)]="startDate" name="fechaDeInicio">
+              </div>
+              <div class="form-group">
+                  <label for="endDate">Fecha de terminación:</label>
+                  <input type="date" id="endDate" autocomplete="off" [(ngModel)]="endDate" name="fechaDeTermino">
+              </div>
+          </form>
+          <button class="button-menu" (click)="saveDates()">Guardar fechas</button>
+      </div>
+  </div>

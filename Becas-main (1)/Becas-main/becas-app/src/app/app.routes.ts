@@ -9,6 +9,8 @@ import { AlimentaryComponent } from './alimentary/alimentary.component';
 import { AllUsersComponent } from './all-users/all-users.component';
 import { InternasComponent } from './internas/internas.component';
 import { UserAlimenticiaComponent } from './user-alimenticia/user-alimenticia.component';
+import { UserExternaComponent } from './user-externa/user-externa.component';
+import { ListBecasExternasComponent } from './components/list-becas-externas.component';
 
 
 export const routes: Routes = [
@@ -20,6 +22,8 @@ export const routes: Routes = [
     {path: 'users', component: AllUsersComponent}, 
     {path: 'register', component: UsersComponent},
     {path: 'becas-internas', component: InternasComponent},
+    {path: 'becados_externa', component:UserExternaComponent},
+    {path: 'becas-externas', component: ListBecasExternasComponent},
     {path: '', redirectTo: '/login', pathMatch:"full"}
     
 ];
