@@ -23,7 +23,7 @@ export class ExterRegisterService {
   }): Observable<any>{
     const token = localStorage.getItem('JWT_TOKEN');
     if(token){
-      return this.http.post('http://localhost:4000/api/becas-externas', userexterna, {
+      return this.http.post('http://localhost:4000/api/becasexternas', userexterna, {
       headers:{
         Authorization: token
       }});

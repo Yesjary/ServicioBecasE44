@@ -1,7 +1,7 @@
 const User = require('../models/usuario');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const nodemailer = require('nodemailer');
+//const nodemailer = require('nodemailer');
 const SECRET_KEY = 'secretkey123456';
 const expireIn = 24 * 60 * 60;
 

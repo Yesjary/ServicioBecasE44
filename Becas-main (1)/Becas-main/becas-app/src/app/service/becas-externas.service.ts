@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class BecasExternasService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:4000/api/becas-externas';
+  private apiUrl = 'http://localhost:4000/api/becasexternas';
 
   crearSolicitud(solicitud: any): Observable<any> {
     const token = localStorage.getItem('JWT_TOKEN');
@@ -83,7 +83,7 @@ export class BecasExternasService {
   getAUsers():Observable<any>{
     const token = localStorage.getItem('JWT_TOKEN');
     if(token){
-      return this.http.get('http://localhost:4000/api/becas-externas', {
+      return this.http.get('http://localhost:4000/api/becasexternas', {
         headers:{
           Authorization: token
         }
