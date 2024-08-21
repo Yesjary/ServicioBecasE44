@@ -69,14 +69,20 @@ exports.refreshToken = async (req, res) => {
     }
 }
 
+
 exports.recoverPassword = async (req, res) => {
     const { email } = req.body;
 
     try {
+        const user = await User.findOne({ correo: email });
+        if (!user) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
 
-        console.log(`Envío de correo a: ${email}`);
+        console.log(`Enviando correo a ${email}`);
 
-        res.status(200).json({ message: 'Correo de recuperación enviado' });
+
+        res.status(200).json({ message: 'Correo de recuperación' });
 
     } catch (error) {
         console.error('Error en la recuperación de contraseña:', error);
